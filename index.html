@@ -1,21 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SWU Internship Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="login-box">
-        <h2 style="text-align:center">เข้าสู่ระบบ</h2>
 
-        <form action="login.php" method="POST">
-            <input type="text" name="username" placeholder="Username / รหัสนิสิต" required>
-            <br><br>
-            <input type="password" name="password" placeholder="Password" required>
-             <br><br>
-            <button type="submit">Login</button>
-        </form>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">SWU Internship</a>
+            <ul class="nav-menu">
+                <li><a href="showcase.html">Showcase</a></li>
+                <li><a href="notify.html">ประชาสัมพันธ์</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">ข้อมูลนิสิต</a>
+                    <div class="dropdown-content">
+                        <a href="std1.html">นิสิตชั้นปีที่ 1</a>
+                        <a href="std2.html">นิสิตชั้นปีที่ 2</a>
+                        <a href="std3.html">นิสิตชั้นปีที่ 3</a>
+                        <a href="std4.html">นิสิตชั้นปีที่ 4</a>
+                    </div>
+                </li>
+                <li><a href="teach.html">ข้อมูลอาจารย์</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="login-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Logo_of_Srinakharinwirot_University.svg/1280px-Logo_of_Srinakharinwirot_University.svg.png" alt="SWU Logo" class="logo">
+            
+            <h2>เข้าสู่ระบบ</h2>
+            <p>ระบบจัดการการฝึกงาน มศว</p>
+
+            <form action="login.php" method="POST">
+                <div class="form-group">
+                    <label for="username">ชื่อผู้ใช้งาน (บัวศรีไอดี)</label>
+                    <input type="text" id="username" name="username" placeholder="example@g.swu.ac.th" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="login-btn">เข้าสู่ระบบ</button>
+            </form>
+
+            <div class="footer-links">
+                <a href="#">ลืมรหัสผ่าน?</a> | <a href="signup.html">ลงทะเบียนนิสิตใหม่</a>
+            </div>
+        </div>
     </div>
+
 </body>
 </html>

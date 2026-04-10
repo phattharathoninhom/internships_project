@@ -30,7 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    header("Location: index.html");
+    echo "<script>
+            alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+            window.location.href='index.html';
+          </script>";
     exit();
 }
 ?>

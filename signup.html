@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงทะเบียนนิสิตใหม่ - SWU Internship</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">SWU Internship</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="showcase.html">Showcase</a></li>
+                <li><a href="notify.html">ประชาสัมพันธ์</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">ข้อมูลนิสิต</a>
+                    <div class="dropdown-content">
+                        <a href="std1.html">นิสิตชั้นปีที่ 1</a>
+                        <a href="std2.html">นิสิตชั้นปีที่ 2</a>
+                        <a href="std3.html">นิสิตชั้นปีที่ 3</a>
+                        <a href="std4.html">นิสิตชั้นปีที่ 4</a>
+                    </div>
+                </li>
+                <li><a href="teach.html">ข้อมูลอาจารย์</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="register-container">
+            <h2>ลงทะเบียนนิสิตใหม่</h2>
+            <p>กรุณากรอกข้อมูลเพื่อเข้าใช้งานระบบจัดการฝึกงาน</p>
+
+            <form action="#">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="student-id">รหัสนิสิต</label>
+                        <input type="text" id="student-id" placeholder="6xxxxxxxx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fullname">ชื่อ-นามสกุล</label>
+                        <input type="text" id="fullname" placeholder="นาย/นางสาว" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">อีเมล (บัวศรีไอดี)</label>
+                    <input type="email" id="email" placeholder="example@g.swu.ac.th" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="faculty">คณะ</label>
+                        <select id="faculty" required>
+                            <option value="">เลือกคณะ</option>
+                            <option value="eng">วิศวกรรมศาสตร์</option>
+                            <option value="sci">วิทยาศาสตร์</option>
+                            <option value="edu">ศึกษาศาสตร์</option>
+                            <option value="finearts">ศิลปกรรมศาสตร์</option>
+                            <option value="social">สังคมศาสตร์</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">ชั้นปี</label>
+                        <select id="year" required>
+                            <option value="1">ชั้นปีที่ 1</option>
+                            <option value="2">ชั้นปีที่ 2</option>
+                            <option value="3">ชั้นปีที่ 3</option>
+                            <option value="4">ชั้นปีที่ 4</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">รหัสผ่าน</label>
+                    <input type="password" id="password" placeholder="ตั้งรหัสผ่านใหม่" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">ยืนยันรหัสผ่านอีกครั้ง</label>
+                    <input type="password" id="confirm-password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="login-btn">ลงทะเบียนเข้าใช้งาน</button>
+            </form>
+
+            <div class="footer-links">
+                มีบัญชีอยู่แล้วใช่หรือไม่? <a href="index.html">กลับไปหน้าเข้าสู่ระบบ</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+/* การตั้งค่า Font และรากฐานของระบบ */
+:root {
+    --swu-red: #9e1b32;
+    --swu-dark: #7a1526;
+    --swu-gray: #58595b;
+    --light-gray: #f8f9fa;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Sarabun', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+}
+
+
+/* --- Navigation Bar Style --- */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+}
+
+.nav-logo {
+    color: var(--swu-red);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 1rem 1.2rem;
+    color: var(--swu-gray);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--swu-red);
+}
+
+/* Dropdown Custom Style */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--swu-gray);
+    padding: 12px 16px;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-gray);
+    color: var(--swu-red);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* --- Student Table Style --- */
+
+.student-list-container {
+    max-width: 1100px;
+    width: 95%;
+    margin: 2rem auto;
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 12px; /* ล้อกับหน้า Login */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.list-header {
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--swu-red);
+    padding-left: 15px;
+}
+
+.list-header h2 {
+    font-size: 1.6rem;
+    color: var(--swu-red);
+    margin: 0;
+}
+
+.list-header p {
+    color: var(--swu-gray);
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* Table Design */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem; /* เท่ากับขนาดตัวหนังสือหน้า Login */
+    color: var(--swu-gray);
+}
+
+.data-table thead tr {
+    background-color: var(--light-gray);
+}
+
+.data-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+    color: var(--swu-red);
+    border-bottom: 2px solid #eee;
+}
+
+.data-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+    background-color: rgba(158, 27, 50, 0.02);
+    transition: 0.2s;
+}
+
+/* ID & Name Styling */
+.id-col { font-weight: bold; color: #333; }
+.name-col { font-weight: 500; color: #333; }
+
+/* Status Badges */
+.badge {
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.badge.success { background-color: #e6f4ea; color: #1e7e34; }
+.badge.pending { background-color: #fff4e5; color: #d97706; }
+.badge.gray { background-color: #f0f0f0; color: #666; }
+
+/* Action Buttons */
+.action-btn {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--swu-red);
+    color: var(--swu-red);
+    transition: 0.3s;
+}
+
+.action-btn:hover {
+    background-color: var(--swu-red);
+    color: var(--white);
+}
+
+/* Utilities */
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+
+/* ปรับปรุงช่องว่างเนื้อหา */
+.main-content {
+    min-height: 100vh;
+    padding-top: 100px; /* เว้นระยะจาก Navbar */
+    padding-bottom: 50px;
+}

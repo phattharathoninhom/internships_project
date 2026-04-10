@@ -95,7 +95,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-top: 60px; /* ชดเชยความสูง navbar */
+    padding-top: 30px; /* ชดเชยความสูง navbar */
 }
 
 .list-container {

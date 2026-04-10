@@ -31,7 +31,7 @@ $result = $conn->query($sql);
         .teacher-content {
             padding: 40px 20px;
             max-width: 1200px;
-            margin: 100px auto 0 auto; /* แก้ปัญหาโดน Navbar ทับ */
+            margin: 100px auto 0 auto;
         }
         
         .header-box {
@@ -60,7 +60,7 @@ $result = $conn->query($sql);
         }
 
         th {
-            background-color: #9e1a32; /* สีแดง มศว */
+            background-color: #9e1a32;
             color: white;
             padding: 15px;
             text-align: left;
@@ -75,17 +75,22 @@ $result = $conn->query($sql);
 
         tr:hover { background-color: #fff9f9; }
 
+        /* --- ส่วนของ Status Badge ที่ปรับปรุงใหม่ --- */
         .status-badge {
             padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.85em;
             font-weight: bold;
-            white-space: nowrap;
             display: inline-block;
+            white-space: nowrap;
         }
-        
-        .status-1 { background: #fff4e5; color: #ff9800; } /* รอรับเรื่อง */
-        .status-other { background: #e8f5e9; color: #2e7d32; } /* สถานะอื่นๆ */
+
+        .status-1 { background-color: #fff4e5; color: #ff9800; } /* ส้ม */
+        .status-2 { background-color: #e3f2fd; color: #1976d2; } /* ฟ้า */
+        .status-3 { background-color: #f3e5f5; color: #7b1fa2; } /* ม่วง */
+        .status-4 { background-color: #e8f5e9; color: #2e7d32; } /* เขียว */
+        .status-9 { background-color: #ffebee; color: #c62828; } /* แดง */
+        .status-default { background-color: #f5f5f5; color: #666; }
 
         select {
             padding: 8px;
@@ -156,8 +161,17 @@ $result = $conn->query($sql);
                         <td><?php echo $row['firstName'] . " " . $row['lastName']; ?></td>
                         <td><?php echo $row['company_name'] ?? '-'; ?></td>
                         <td>
-                            <?php $class = ($row['status_code'] == '1') ? 'status-1' : 'status-other'; ?>
-                            <span class="status-badge <?php echo $class; ?>">
+                            <?php 
+                                // Logic กำหนด Class สีตาม status_code
+                                $s_code = $row['status_code'];
+                                $status_class = "status-default";
+                                if($s_code == 1) $status_class = "status-1";
+                                else if($s_code == 2) $status_class = "status-2";
+                                else if($s_code == 3) $status_class = "status-3";
+                                else if($s_code == 4) $status_class = "status-4";
+                                else if($s_code == 9) $status_class = "status-9";
+                            ?>
+                            <span class="status-badge <?php echo $status_class; ?>">
                                 <?php echo $row['status_name'] ?? 'ไม่มีข้อมูล'; ?>
                             </span>
                         </td>
@@ -171,7 +185,7 @@ $result = $conn->query($sql);
                                     </select>
                                 </form>
                             <?php else: ?>
-                                <span style="color: #ccc; font-size: 0.9em;">ดำเนินการแล้ว</span>
+                                <span style="color: #999; font-size: 0.9em;">✓ ดำเนินการแล้ว</span>
                             <?php endif; ?>
                         </td>
                         <td>

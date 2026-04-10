@@ -25,11 +25,10 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        /* ตกแต่งเพิ่มเติมสำหรับหน้า Dashboard */
         .admin-content {
             padding: 40px 20px;
             max-width: 1200px;
-            margin: 60px auto 0 auto;
+            margin: 80px auto 0 auto; /* ปรับ Margin ลงมาเพื่อไม่ให้ Navbar ทับ */
         }
         
         .header-box {
@@ -58,7 +57,7 @@ $result = $conn->query($sql);
         }
 
         th {
-            background-color: #9e1a32; /* สีแดง มศว */
+            background-color: #9e1a32;
             color: white;
             padding: 15px;
             text-align: left;
@@ -71,18 +70,24 @@ $result = $conn->query($sql);
             color: #444;
         }
 
-        tr:hover {
-            background-color: #fff9f9;
-        }
+        tr:hover { background-color: #fff9f9; }
 
+        /* --- ส่วนของ Status Badge ที่รองรับหลายสี --- */
         .status-badge {
             padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.85em;
-            background: #e8f0fe;
-            color: #1967d2;
             font-weight: bold;
+            display: inline-block;
+            white-space: nowrap;
         }
+
+        .status-1 { background-color: #fff4e5; color: #ff9800; } /* ส้ม */
+        .status-2 { background-color: #e3f2fd; color: #1976d2; } /* ฟ้า */
+        .status-3 { background-color: #f3e5f5; color: #7b1fa2; } /* ม่วง */
+        .status-4 { background-color: #e8f5e9; color: #2e7d32; } /* เขียว */
+        .status-9 { background-color: #ffebee; color: #c62828; } /* แดง */
+        .status-default { background-color: #f5f5f5; color: #666; }
 
         select {
             padding: 8px;
@@ -90,6 +95,7 @@ $result = $conn->query($sql);
             border: 1px solid #ddd;
             font-family: 'Sarabun', sans-serif;
             outline: none;
+            cursor: pointer;
         }
 
         .btn-detail {
@@ -107,11 +113,7 @@ $result = $conn->query($sql);
             color: white;
         }
 
-        .logout-btn {
-            color: #9e1a32;
-            text-decoration: none;
-            font-weight: bold;
-        }
+        .logout-btn { color: #9e1a32; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -156,18 +158,29 @@ $result = $conn->query($sql);
                             <td><?php echo $row['firstName'] . " " . $row['lastName']; ?></td>
                             <td><?php echo $row['company_name']; ?></td>
                             <td>
-                                <span class="status-badge"><?php echo $row['status_name']; ?></span>
+                                <?php 
+                                    $s_code = $row['status_code'];
+                                    $status_class = "status-default";
+                                    if($s_code == 1) $status_class = "status-1";
+                                    else if($s_code == 2) $status_class = "status-2";
+                                    else if($s_code == 3) $status_class = "status-3";
+                                    else if($s_code == 4) $status_class = "status-4";
+                                    else if($s_code == 9) $status_class = "status-9";
+                                ?>
+                                <span class="status-badge <?php echo $status_class; ?>">
+                                    <?php echo $row['status_name']; ?>
+                                </span>
                             </td>
                             <td>
                                 <form action="update_status.php" method="POST" style="display:inline;">
                                     <input type="hidden" name="request_id" value="<?php echo $row['request_id']; ?>">
                                     <select name="new_status" onchange="if(confirm('ยืนยันการเปลี่ยนสถานะ?')) this.form.submit()">
                                         <option value="">-- แก้ไข --</option>
-                                        <option value="1">1: รับเรื่องเข้าระบบ</option>
-                                        <option value="2">2: อาจารย์ที่ปรึกษาอนุมัติ</option>
-                                        <option value="3">3: ออกใบส่งตัวแล้ว</option>
-                                        <option value="4">4: ฝึกงานเสร็จสิ้น</option>
-                                        <option value="9">9: ยกเลิก</option>
+                                        <option value="1">รับเรื่องเข้าระบบ</option>
+                                        <option value="2">อาจารย์ที่ปรึกษาอนุมัติ</option>
+                                        <option value="3">ออกใบส่งตัวแล้ว</option>
+                                        <option value="4">ฝึกงานเสร็จสิ้น</option>
+                                        <option value="9">ยกเลิก</option>
                                     </select>
                                 </form>
                             </td>

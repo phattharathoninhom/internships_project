@@ -94,8 +94,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
-    padding-top: 30px; /* ชดเชยความสูง navbar */
+    min-height: 100vh;
+    padding-top: 60px; /* ชดเชยความสูง navbar */
 }
 
 .list-container {

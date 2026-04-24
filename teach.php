@@ -81,7 +81,7 @@
                 <p class="t-pos">อาจารย์ประจำหลักสูตร</p>
                 <div class="t-divider"></div>
                 <div class="t-contact">
-                    <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16508</p>
+                    <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16292</p>
                     <p><i class="fas fa-envelope"></i> chokthamrong@g.swu.ac.th</p>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                 <p class="t-pos">อาจารย์ประจำหลักสูตร</p>
                 <div class="t-divider"></div>
                 <div class="t-contact">
-                    <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16508</p>
+                    <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16292</p>
                     <p><i class="fas fa-envelope"></i> dussadee@g.swu.ac.th</p>
                 </div>
             </div>
@@ -120,7 +120,7 @@
                 <p class="t-pos">อาจารย์ประจำหลักสูตร</p>
                 <div class="t-divider"></div>
                 <div class="t-contact">
-                    <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16508</p>
+                    <p><i class="fas fa-phone-alt"></i>085-617-9617</p>
                     <p><i class="fas fa-envelope"></i>sumattra@g.swu.ac.th</p>
                 </div>
             </div>

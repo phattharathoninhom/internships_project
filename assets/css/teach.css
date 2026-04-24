@@ -1,63 +1,125 @@
 /* assets/css/teach.css */
 
-:root {
-    --swu-red: #9e1b32;
-    --bg-light: #f8f9fa;
-    --white: #ffffff;
-    --text-gray: #58595b;
-}
-
-body {
-    background-color: var(--bg-light);
-    margin: 0;
-    font-family: 'Sarabun', sans-serif;
-}
-
-.main-container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 120px 20px 50px; /* เว้นระยะจาก Navbar */
+    padding: 0 20px;
+}
+
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+}
+
+.nav-logo {
+    color: var(--swu-red);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    display: block;
+    padding: 1rem 1.2rem;
+    color: var(--swu-gray);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--swu-red);
+}
+
+/* Dropdown Custom Style */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: var(--swu-gray);
+    padding: 12px 16px;
+    font-size: 0.9rem;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-gray);
+    color: var(--swu-red);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .page-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .page-header h2 {
-    color: var(--swu-red);
-    font-size: 2rem;
+    color: #9e1b32; /* swu-red */
+    font-size: 2.2rem;
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 .page-header p {
-    color: #888;
+    color: #666;
+    font-size: 1.1rem;
 }
 
-/* --- ส่วนการจัดระเบียบบล็อก 3-3-2 --- */
+/* การจัดวาง Grid อาจารย์ */
 .teacher-grid {
-    display: flex; /* ใช้ flex เพื่อให้จัดกึ่งกลางแถวสุดท้ายได้ง่าย */
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* ทำให้บล็อกที่เหลือในแถวสุดท้ายอยู่ตรงกลาง */
+    justify-content: center;
     gap: 30px;
+    padding-bottom: 80px;
 }
 
 .teacher-card {
-    background: var(--white);
+    background: #ffffff;
     border-radius: 20px;
-    padding: 40px 20px;
+    padding: 40px 25px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
     border: 1px solid #eee;
-    /* บังคับขนาดเพื่อให้แบ่งเป็น 3 คอลัมน์ (100% / 3 หักลบ gap) */
-    width: calc(33.333% - 30px); 
+    width: calc(33.333% - 30px); /* แสดง 3 คอลัมน์ */
     box-sizing: border-box;
 }
 
-/* แถบสีแดงด้านบนสำหรับอาจารย์ท่านแรก */
 .top-red {
-    border-top: 5px solid var(--swu-red);
+    border-top: 5px solid #9e1b32;
 }
 
 .teacher-card:hover {
@@ -66,8 +128,8 @@ body {
 }
 
 .avatar-wrapper {
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto 20px;
     border-radius: 50%;
     overflow: hidden;
@@ -82,29 +144,29 @@ body {
 }
 
 .t-name {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     color: #333;
     margin: 10px 0 5px;
     font-weight: bold;
 }
 
 .t-pos {
-    color: var(--swu-red);
-    font-weight: bold;
+    color: #9e1b32;
+    font-weight: 600;
     font-size: 1rem;
     margin-bottom: 15px;
 }
 
 .t-divider {
-    width: 50px;
+    width: 40px;
     height: 1px;
-    border-top: 1.5px dashed #ccc;
-    margin: 0 auto 20px;
+    background: #ddd;
+    margin: 15px auto;
 }
 
 .t-contact p {
-    margin: 5px 0;
-    color: var(--text-gray);
+    margin: 8px 0;
+    color: #58595b;
     font-size: 0.95rem;
     display: flex;
     align-items: center;
@@ -113,18 +175,15 @@ body {
 }
 
 .t-contact i {
-    color: var(--swu-red);
+    color: #9e1b32;
+    width: 15px;
 }
 
-/* --- Responsive --- */
+/* Responsive */
 @media (max-width: 992px) {
-    .teacher-card {
-        width: calc(50% - 30px); /* หน้าจอขนาดกลาง 2 บล็อกต่อแถว */
-    }
+    .teacher-card { width: calc(50% - 30px); }
 }
 
 @media (max-width: 600px) {
-    .teacher-card {
-        width: 100%; /* มือถือ 1 บล็อกต่อแถว */
-    }
+    .teacher-card { width: 100%; }
 }

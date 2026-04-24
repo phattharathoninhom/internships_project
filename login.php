@@ -30,10 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    echo "<script>
-            alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
-            window.location.href='index.html';
-          </script>";
+    echo "<script>alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง'); window.location.href='login.php';</script>";
     exit();
 }
 ?>
@@ -42,14 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWU Internship Management System</title>
+    <title>เข้าสู่ระบบ - SWU Internship</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-
-    <?php include 'includes/navbar.php'; ?>
+<body class="login-page"> <?php include 'includes/navbar.php'; ?>
 
     <div class="main-content">
         <div class="login-container">
@@ -74,10 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <button type="submit" class="login-btn">เข้าสู่ระบบ</button>
             </form>
-
-            
         </div>
     </div>
-
 </body>
-</html>หลัก
+</html>

@@ -1,4 +1,4 @@
-
+/* --- Global Settings --- */
 :root {
     --swu-red: #9e1b32;
     --swu-dark: #7a1526;
@@ -14,7 +14,23 @@ body {
     background-color: var(--light-gray);
 }
 
+/* --- Layout สำหรับทุกหน้า (index, showcase, std, admin) --- */
+.main-content {
+    display: block;             /* เปลี่ยนจาก flex เป็น block เพื่อให้เนื้อหาไหลลงปกติ */
+    min-height: 100vh;
+    padding-top: 100px;         /* ดันเนื้อหาลงมา 100px เพื่อหลบ Navbar ให้พ้นหัวข้อ */
+    box-sizing: border-box;
+}
 
+/* --- เฉพาะหน้า Login (จัดให้กึ่งกลางหน้าจอ) --- */
+.login-page .main-content {
+    display: flex;              
+    justify-content: center;    
+    align-items: center;        
+    padding-top: 0;             
+}
+
+/* --- Navbar Style (ปรับขีดเส้นใต้ให้ตรงกึ่งกลาง) --- */
 .navbar {
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -22,15 +38,6 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0.5rem 2rem;
 }
 
 .nav-logo {
@@ -53,139 +60,48 @@ body {
 
 .nav-menu a {
     display: block;
-    padding: 1rem 1.2rem; /* ระยะห่างซ้ายขวาคือ 1.2rem */
+    padding: 1rem 1.2rem;
     color: var(--swu-gray);
     text-decoration: none;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    transition: color 0.3s;
 }
 
 .nav-menu a:hover {
-    color: var(--swu-red) !important;
-    /* บังคับให้เด้งขึ้น 5px ทุกหน้า */
-    transform: translateY(-5px) !important; 
+    color: var(--swu-red);
 }
+
 .nav-menu a::after {
     content: '';
     position: absolute;
     bottom: 5px;
-    left: 50%; /* เริ่มจากตรงกลาง */
+    left: 50%;
     width: 0;
     height: 3px;
     background: var(--swu-red);
     transition: all 0.3s ease;
-    transform: translateX(-50%); /* ดึงกลับมาให้ตรงกลางเป๊ะ */
+    transform: translateX(-50%);
     border-radius: 2px;
 }
 
+.nav-menu a.active::after, 
 .nav-menu a:hover::after {
-    width: 60%; 
+    width: 60%;
 }
 
-.nav-menu a.active {
-    color: var(--swu-red) !important;
-    font-weight: bold;
-}
-
-.nav-menu a.active::after {
-    width: 60% !important;
-    background-color: var(--swu-red);
-}
-
-.user-name {
-    color: #0e0e0e !important;
-    font-weight: bold !important;
-}
-
-.user-display {
-    display: flex;
-    align-items: center;
-    padding: 0 15px; /* ระยะห่างซ้าย-ขวาให้เท่ากับเมนูอื่น */
-}
-
-
-.user-display span {
-    color: #0e0e0e;
-    font-weight: bold;
-    font-size: 1em;
-    white-space: nowrap;
-    line-height: normal; 
-}
-
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--white);
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    border-radius: 4px;
-    z-index: 1;
-}
-
-.dropbtn {
-    cursor: pointer;
-}
-
-
-.dropdown-content a {
-    color: var(--swu-gray);
-    padding: 12px 16px;
-    font-size: 0.9rem;
-}
-
-.dropdown-content a:hover {
-    background-color: var(--light-gray);
-    color: var(--swu-red);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    min-height: 100vh;  
-    padding-top: 30px;   
-}
-
+/* --- Login Container --- */
 .login-container {
-    background-color: var(--white);
-    /* เพิ่ม Padding บน-ล่าง ให้ดูโปร่งและสูงขึ้น */
-    padding: 3.5rem 3rem; 
-    border-radius: 20px; /* มนขึ้นเพื่อให้ดูทันสมัย */
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.07);
     width: 100%;
-    /* ปรับให้อยู่ที่ 420px จะไม่ดูอ้วนไป และไม่ผอมเท่าเดิม */
     max-width: 380px; 
     text-align: center;
-    transition: all 0.3s ease;
-}
-
-.login-container h2 {
-    margin-bottom: 1.5rem; /* เว้นระยะจากคำว่าเข้าสู่ระบบ */
-    font-size: 1.8rem;
-}
-
-.login-container p {
-    margin-bottom: 0.8rem; /* เว้นระยะระหว่างบรรทัดคณะและหลักสูตร */
-    line-height: 1.6;
-}
-
-.form-group {
-    margin-top: 2rem; /* เว้นระยะจากข้อความลงมาที่ช่องกรอกข้อมูล */
 }
 
 .logo {
     width: 100px;
     margin-bottom: 1rem;
-}
-
-h2 {
-    color: var(--swu-red);
-    margin: 0;
 }
 
 .form-group {
@@ -197,45 +113,24 @@ label {
     display: block;
     margin-bottom: 0.5rem;
     color: var(--swu-gray);
-    font-size: 0.9rem;
 }
 
-input {
+input[type="text"], input[type="password"] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 6px;
+    border-radius: 8px;
     box-sizing: border-box;
 }
 
-input:focus {
-    outline: none;
-    border-color: var(--swu-red);
-}
-
 .login-btn {
-    background-color: var(--swu-red);
+    width: 100%;
+    padding: 12px;
+    margin-top: 2rem;
+    background: var(--swu-red);
     color: white;
     border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1rem;
     font-weight: bold;
-    margin-top: 1.5rem;
-}
-
-.login-btn:hover {
-    background-color: var(--swu-dark);
-}
-
-.footer-links {
-    margin-top: 1.5rem;
-    font-size: 0.85rem;
-}
-
-.footer-links a {
-    color: var(--swu-red);
-    text-decoration: none;
 }

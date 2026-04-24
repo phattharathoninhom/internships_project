@@ -1,10 +1,7 @@
 <?php
-// 1. เช็คชื่อไฟล์ปัจจุบัน
 $current_page = basename($_SERVER['PHP_SELF']);
 $std_pages = ['std1.php', 'std2.php', 'std3.php', 'std4.php']; 
-
-// 2. กำหนด Base Path ของโปรเจกต์ (เพื่อให้กดจากโฟลเดอร์ไหนก็เด้งไปหน้าหลักได้)
-$base_url = "/internship_project/";
+$base_url = "/internship_project/"; 
 ?>
 
 <nav class="navbar">
@@ -13,7 +10,6 @@ $base_url = "/internship_project/";
         
         <ul class="nav-menu">
             <li><a href="<?php echo $base_url; ?>index.php" class="<?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">หน้าแรก</a></li>
-            
             <li><a href="<?php echo $base_url; ?>showcase.php" class="<?php echo ($current_page == 'showcase.php') ? 'active' : ''; ?>">Showcase</a></li>
             
             <li class="dropdown">
@@ -30,23 +26,17 @@ $base_url = "/internship_project/";
 
             <?php if(isset($_SESSION['user_id'])): ?>
                 <?php 
-                    $role = isset($_SESSION['role']) ? $_SESSION['role'] : 'student'; 
-                    if ($role == 'admin') {
-                        $dash_link = $base_url . "admin/admin_dashboard.php";
-                    } elseif ($role == 'teacher') {
-                        $dash_link = $base_url . "teacher/teacher_dashboard.php";
-                    } else {
-                        $dash_link = $base_url . "student/student_dashboard.php";
-                    }
+                    $role = $_SESSION['role']; 
+                    $dash_link = ($role == 'admin') ? $base_url."admin/admin_dashboard.php" : (($role == 'teacher') ? $base_url."teacher/teacher_dashboard.php" : $base_url."student/student_dashboard.php");
                 ?>
                 <li class="user-display">
-                    <a href="<?php echo $dash_link; ?>" class="user-name">
+                    <a href="<?php echo $dash_link; ?>" class="user-name active">
                         <i class="fa fa-user-circle"></i> <?php echo $_SESSION['name'];?>
                     </a>
                 </li>
-                <li><a href="<?php echo $base_url; ?>logout.php" class="logout-style">ออกจากระบบ</a></li>
+                <li><a href="<?php echo $base_url; ?>logout.php">ออกจากระบบ</a></li>
             <?php else: ?>
-                <li><a href="<?php echo $base_url; ?>login.php" class="login-link">เข้าสู่ระบบ</a></li>
+                <li><a href="<?php echo $base_url; ?>login.php">เข้าสู่ระบบ</a></li>
             <?php endif; ?>
         </ul>
     </div>

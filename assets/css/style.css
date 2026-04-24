@@ -56,11 +56,30 @@ body {
     padding: 1rem 1.2rem;
     color: var(--swu-gray);
     text-decoration: none;
-    transition: color 0.3s;
+    /* เพิ่ม !important เพื่อป้องกัน CSS หน้าอื่นมาขัดขวาง */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; 
+    position: relative;
 }
 
 .nav-menu a:hover {
-    color: var(--swu-red);
+    color: var(--swu-red) !important;
+    /* บังคับให้เด้งขึ้น 5px ทุกหน้า */
+    transform: translateY(-5px) !important; 
+}
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--swu-red);
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after {
+    width: 50%; /* ขีดเส้นใต้จะเด้งออกมาจากตรงกลาง */
 }
 
 .user-display {
@@ -115,12 +134,29 @@ body {
 
 .login-container {
     background-color: var(--white);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    /* เพิ่ม Padding บน-ล่าง ให้ดูโปร่งและสูงขึ้น */
+    padding: 3.5rem 3rem; 
+    border-radius: 20px; /* มนขึ้นเพื่อให้ดูทันสมัย */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.07);
     width: 100%;
-    max-width: 380px;
+    /* ปรับให้อยู่ที่ 420px จะไม่ดูอ้วนไป และไม่ผอมเท่าเดิม */
+    max-width: 380px; 
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.login-container h2 {
+    margin-bottom: 1.5rem; /* เว้นระยะจากคำว่าเข้าสู่ระบบ */
+    font-size: 1.8rem;
+}
+
+.login-container p {
+    margin-bottom: 0.8rem; /* เว้นระยะระหว่างบรรทัดคณะและหลักสูตร */
+    line-height: 1.6;
+}
+
+.form-group {
+    margin-top: 2rem; /* เว้นระยะจากข้อความลงมาที่ช่องกรอกข้อมูล */
 }
 
 .logo {

@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>SWU Internship Management System</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -55,11 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Logo_of_Srinakharinwirot_University.svg/1280px-Logo_of_Srinakharinwirot_University.svg.png" alt="SWU Logo" class="logo">
             
             <h2>เข้าสู่ระบบ</h2>
-            <p>ระบบจัดการการฝึกงานนิสิต มศว</p>
+            <p style="margin-top: 5px; color: #58595b;">คณะมนุษยศาสตร์ มหาวิทยาลัยศรีนครินทรวิโรฒ</p>
+            <p style="font-weight: bold; color: #9e1b32; font-size: 0.9rem;">
+            หลักสูตรศิลปศาสตรบัณฑิต สาขาวิชาสารสนเทศศึกษา
+            </p>
 
             <form action="login.php" method="POST">
                 <div class="form-group">
-                    <label for="username">ชื่อผู้ใช้งาน (บัวศรีไอดี)</label>
+                    <label for="username">ชื่อผู้ใช้งาน</label>
                     <input type="text" id="username" name="username" placeholder="รหัสนิสิต" required>
                 </div>
 

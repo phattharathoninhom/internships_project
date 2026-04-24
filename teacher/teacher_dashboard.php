@@ -28,6 +28,7 @@ $result = $conn->query($sql);
     <title>Teacher Dashboard | SWU Internship</title>
     <link rel="stylesheet" href="/internship_project/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .teacher-content { padding: 40px 20px; max-width: 1200px; margin: 60px auto 0 auto; }
         .header-box { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }

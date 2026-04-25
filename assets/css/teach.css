@@ -60,6 +60,7 @@ body {
     border: 1px solid #eee;
     width: calc(33.333% - 30px); /* แสดง 3 คอลัมน์ */
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 .top-red {

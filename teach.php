@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ข้อมูลอาจารย์ - SWU Internship</title>
+    <title>ข้อมูลอาจารย์ - ISSWU</title>
     <link rel="stylesheet" href="/internship_project/assets/css/teach.css">
     <link rel="stylesheet" href="/internship_project/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
             </div>
 
             <div class="teacher-grid">
-                <div class="teacher-card top-red">
+                <a href="profile/dit.php" class="teacher-card top-red">
                     <div class="avatar-wrapper">
                         <img src="https://is.hu.swu.ac.th/wp-content/uploads/2021/01/Dit-scaled.jpg" alt="อ.ดร.ดิษฐ์">
                     </div>
@@ -33,9 +33,10 @@
                         <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16508</p>
                         <p><i class="fas fa-envelope"></i> dit@g.swu.ac.th</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="teacher-card">
+            
+                <a href="profile/thiti.php" class="teacher-card">
                     <div class="avatar-wrapper">
                         <img src="https://is.hu.swu.ac.th/wp-content/uploads/2021/01/thiti-scaled.jpg" alt="อ.ดร.ฐิติ">
                     </div>
@@ -46,9 +47,10 @@
                         <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16087</p>
                         <p><i class="fas fa-envelope"></i> thitik@g.swu.ac.th</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="teacher-card">
+            
+                <a href="profile/vipakorn.php" class="teacher-card">
                     <div class="avatar-wrapper">
                         <img src="https://is.hu.swu.ac.th/wp-content/uploads/2020/02/Vipakorn-683x1024.jpg" alt="ผศ.ดร.วิภากร">
                     </div>
@@ -59,9 +61,10 @@
                         <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16508</p>
                         <p><i class="fas fa-envelope"></i> vipakorn@g.swu.ac.th</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="teacher-card">
+            
+                <a href="teacher_profile.php?id=4" class="teacher-card">
                     <div class="avatar-wrapper">
                         <img src="https://is.hu.swu.ac.th/wp-content/uploads/2025/11/Chotima.jpg" alt="อ.โชติมา">
                     </div>
@@ -72,9 +75,10 @@
                         <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16508</p>
                         <p><i class="fas fa-envelope"></i> chotimaw@g.swu.ac.th</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="teacher-card">
+            
+                <a href="teacher_profile.php?id=5" class="teacher-card">
                     <div class="avatar-wrapper">
                         <img src="https://is.hu.swu.ac.th/wp-content/uploads/2025/02/Chokthamrong.jpg" alt="อ.ดร.โชคธำรงค์">
                     </div>
@@ -85,9 +89,10 @@
                         <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16292</p>
                         <p><i class="fas fa-envelope"></i> chokthamrong@g.swu.ac.th</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="teacher-card">
+            
+                <a href="teacher_profile.php?id=6" class="teacher-card">
                     <div class="avatar-wrapper">
                         <img src="https://is.hu.swu.ac.th/wp-content/uploads/2020/02/Dussadee-683x1024.jpg" alt="ผศ.ดร.ดุษฎี">
                     </div>
@@ -98,9 +103,10 @@
                         <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16292</p>
                         <p><i class="fas fa-envelope"></i> dussadee@g.swu.ac.th</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="teacher-card">
+            
+                <a href="teacher_profile.php?id=7" class="teacher-card">
                     <div class="avatar-wrapper">
                         <img src="https://is.hu.swu.ac.th/wp-content/uploads/2020/02/Sasipimol-683x1024.jpg" alt="ผศ.ดร.ศศิพิมล">
                     </div>
@@ -111,9 +117,10 @@
                         <p><i class="fas fa-phone-alt"></i> 02-649-5000 ต่อ 16508</p>
                         <p><i class="fas fa-envelope"></i> sasipimol@g.swu.ac.th</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="teacher-card">
+            
+                <a href="teacher_profile.php?id=8" class="teacher-card">
                     <div class="avatar-wrapper">
                         <img src="https://is.hu.swu.ac.th/wp-content/uploads/2020/02/Sumattra-683x1024.jpg" alt="อาจารย์ ดร. ศุมรรษตรา แสนวา">
                     </div>
@@ -124,7 +131,7 @@
                         <p><i class="fas fa-phone-alt"></i> 085-617-9617</p>
                         <p><i class="fas fa-envelope"></i> sumattra@g.swu.ac.th</p>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
